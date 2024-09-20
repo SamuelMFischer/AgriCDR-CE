@@ -1,0 +1,18 @@
+Design
+? Pretest design --> orthogonal
+? 2 alternatives per choice set defined here (3rd alternative will be constant base alternative).
+? 7 attributes with weighting parameters (b1 carbon sequestration, b2 soil erosion, b3 water quality, b4 biodiversity, b5 soil health, b6 flood protection, b7 cost).
+
+
+;alts = alt1*, alt2*                       ?Unlabeled alternatives, dominant alternatives removed 
+;rows = 18                                 ?Specifies the number of choice situations to be generated
+;block = 1                                 ?Specifies the number of blocks
+;orth = sim                                ?Simultaneous orthogonal design 
+
+
+;model:                                     
+U(alt1) = b1*climate[0,100,200]  +  b2*soiler[10,20,40] + b3*waterq[0,1,2] + b4*biodiversity[0,1,2] + b5*soilhe[0,1,2] + b6*flood[0,1,2] + b7*cost[50,100,150] /
+U(alt2) = b1*climate +  b2*soiler + b3*waterq + b4*biodiversity + b5*soilhe + b6*flood + b7*cost
+$
+? priors and levels only have to be defined once when used in both alternatives
+

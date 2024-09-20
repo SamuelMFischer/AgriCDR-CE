@@ -1,0 +1,19 @@
+Design
+? Bayesian efficient design --> priors needed --> pretest (pretest used sequentially orthogonal design)
+? 2 alternatives per choice set defined here (3rd alternative will be constant base alternative).
+? 6 attributes with weighting parameters (b1 carbon sequestration, b2 water quality, b3 biodiversity, b4 flood protection, b5 soil erosion, b6 cost).
+
+
+;alts = alt1*, alt2*                       ?Unlabeled alternatives, dominant alternatives removed
+;rows = 18                                 ?Specifies the number of choice situations to be generated
+;block = 1                                 ?Specifies the number of blocks
+;eff = (mnl,d,mean)                        ?MNL model & Bayesian D-efficient design
+
+
+;model:                                     
+U(alt1) = b1[(n,0.4499,0.1708)]*climate[0,6,12]  +  b2[(n,0.7248,0.1499)]*waterq[0,1,2] + b3[(n,1.1902,0.1611)]*biodiversity[0,1,2] + b4[(n,0.3575,0.1504)]*flood[0,1,2] + b5[(n,0.1982,0.1520)]*soiler[10,20,40] + b6[(n,-0.0120,0.0011)]*cost[50,200,500] /
+U(alt2) = b1*climate +  b2*waterq + b3*biodiversity + b4*flood + b5*soiler + b6*cost
+$
+? priors and levels only have to be defined once when used in both alternatives
+
+
